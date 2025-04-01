@@ -1,10 +1,11 @@
 const express = require("express");
 const { body, validationResult } = require("express-validator");
+const usersRouter = require("./routes/usersRouter");
 
 const app = express();
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
-app.use("/", users)
+app.use("/", usersRouter);
 
 
 
