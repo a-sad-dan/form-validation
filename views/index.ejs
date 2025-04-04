@@ -14,7 +14,7 @@
     <% users.forEach(function(user) { %>
     <li>ID: <%= user.id %>, Name: <%= user.firstName %> <%= user.lastName %></li>
     <a href="/<%= user.id %>/update">Update</a>
-    
+
     <!-- This time we're sending a POST request to our route, so we need a form. -->
     <form action="/<%= user.id %>/delete" method="POST" style="display:inline;">
       <button type="submit" onclick="return confirm('Are you sure you want to delete this user?');">Delete</button>
@@ -22,6 +22,11 @@
     <% }); %>
     <% } %>
   </ul>
+
+  <form action="/search" method="get">
+    <input type="search" name="searchValue" id="searchValue">
+    <button type="submit">Search</button>
+  </form>
 
   <a href="/create">Create a user</a>
 </body>
